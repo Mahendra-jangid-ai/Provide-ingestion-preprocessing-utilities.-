@@ -1,0 +1,16 @@
+data:
+  raw_path: data/raw/employment_dataset.csv
+  processed_path: data/processed/employment_dataset_preprocessed.csv
+
+columns:
+  numerical:
+    - Age
+    - Salary
+    - Experience
+    - Perfomance_score
+  categorical:
+    - Gender
+    - Department
+    - Hiring_Date
+    - Hired
+    - Location
