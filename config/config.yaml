@@ -6,11 +6,11 @@ columns:
   numerical:
     - Age
     - Salary
-    - Experience
-    - Perfomance_score
+    - Performance_Score
   categorical:
     - Gender
+    - Experience
     - Department
-    - Hiring_Date
+    # - Hiring_Date
     - Hired
     - Location
