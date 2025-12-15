@@ -1,6 +1,6 @@
 data:
   raw_path: data/raw/employment_dataset.csv
-  processed_path: data/processed/employment_dataset_preprocessed.csv
+  processed_path: data/processed/employment_dataset_preprocessed1.csv
 
 columns:
   numerical:
