@@ -16,7 +16,7 @@ def run_pipeline() -> None:
 
 
     df = df.drop_duplicates()
-    df = df.drop(columns=["Hiring_Date"], errors="ignore")
+    df = df.drop(columns=["Hiring_Date"])
     
     # df['Experience'] = df['Experience'].astype('int')
     # bins = [5,10,15,20,25,30,35,40]
@@ -44,3 +44,4 @@ def run_pipeline() -> None:
 
     df.to_csv(config["data"]["processed_path"], index=False)
     logger.info("Pipeline completed")
+    
