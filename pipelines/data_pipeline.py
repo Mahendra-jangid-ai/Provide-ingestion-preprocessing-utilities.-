@@ -17,8 +17,9 @@ def run_pipeline() -> None:
 
     df = df.drop_duplicates()
     df = df.drop(columns=["Hiring_Date"])
-    
-    # df['Experience'] = df['Experience'].astype('int')
+    df["Experience"] = df["Experience"].str.replace("years", "", regex=False)
+    df['Experience'] = pd.to_numeric(df['Experience'])
+    df["Experience"] = df["Experience"].fillna(0).astype("int64")
     # bins = [5,10,15,20,25,30,35,40]
     # labels = ['Experience 1-5 year','Experience 5-10 year','Experience 10-15 year','Experience 15-20 year','Experience 20-25 year','Experience 25-30 year','Experience 30-35 year','Experience 35-40 year']
     # df['Experience'] = pd.cut(df['Experience'], bins=bins, labels=labels, right=True)
@@ -44,4 +45,3 @@ def run_pipeline() -> None:
 
     df.to_csv(config["data"]["processed_path"], index=False)
     logger.info("Pipeline completed")
-    
