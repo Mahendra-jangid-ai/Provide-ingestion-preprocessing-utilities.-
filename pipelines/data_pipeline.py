@@ -17,9 +17,16 @@ def run_pipeline() -> None:
 
     df = df.drop_duplicates()
     df = df.drop(columns=["Hiring_Date"], errors="ignore")
+    
+    # df['Experience'] = df['Experience'].astype('int')
+    # bins = [5,10,15,20,25,30,35,40]
+    # labels = ['Experience 1-5 year','Experience 5-10 year','Experience 10-15 year','Experience 15-20 year','Experience 20-25 year','Experience 25-30 year','Experience 30-35 year','Experience 35-40 year']
+    # df['Experience'] = pd.cut(df['Experience'], bins=bins, labels=labels, right=True)
+
     df["Salary"] = df["Salary"].astype(float)
     df = df[df["Age"] > 18]
     df["Location"] = df["Location"].fillna("Unknown")
+    df["Department"] = df["Department"].fillna("Unknown")
 
     HRSchema.validate(df)
     logger.info("Schema validated")

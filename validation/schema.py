@@ -10,7 +10,7 @@ HRSchema = DataFrameSchema(
         "Gender": Column(str, Check.isin(["Male", "Female", "M", "F"]), nullable=True),
         "Department": Column(
             str,
-            Check.isin(["HR", "Sales", "Engineering", "Marketing"]),
+            Check.isin(["HR", "Sales", "Engineering", "Marketing",'Unknown']),
             nullable=True,
         ),
         "Hired": Column(str, Check.isin(["Yes", "No", "Y", "N"]), nullable=True),
