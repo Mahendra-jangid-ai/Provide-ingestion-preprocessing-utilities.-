@@ -17,6 +17,7 @@ def run_pipeline() -> None:
     df = df.drop_duplicates()
     df = df.drop(columns=["Hiring_Date"])
     df["Experience"] = df["Experience"].str.replace("years", "", regex=False)
+    # df["Experience"] = df["Experience"].astype(int)
     # df['Experience'] = pd(df['Experience'].astype(str).str.strip())
     df['Experience'] = pd.to_numeric(df['Experience'])
     df["Experience"] = df["Experience"].fillna(0).astype("int64")
